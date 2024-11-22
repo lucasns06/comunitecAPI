@@ -11,6 +11,7 @@ import java.util.List;
 public class CategoriaService {
     @Autowired
     private CategoriaRepository repository;
+
     public List<Categoria> listar(){
         return repository.findAll();
     };

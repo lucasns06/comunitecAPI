@@ -1,7 +1,6 @@
 package br.com.comunitec.comunitec.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +9,11 @@ import lombok.Setter;
 @Entity
 public class Usuario {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "idUsuario")
     private Long id;
+
+    @JoinColumn(name = "nomeUsuario")
     private String nome;
 
 }

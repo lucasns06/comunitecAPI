@@ -10,13 +10,13 @@ import lombok.Setter;
 public class Contato {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "idContato")
+    @Column(name = "idContato")
     private Long id;
 
-    @JoinColumn(name = "nomeContato")
+    @Column(name = "nomeContato")
     private String nome;
 
-    @JoinColumn(name = "telefoneContato")
+    @Column(name = "telefoneContato")
     private char telefone;
 
     @ManyToOne

@@ -10,10 +10,10 @@ import lombok.Setter;
 public class Mensagem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "idMensagem")
+    @Column(name = "idMensagem")
     private Long id;
 
-    @JoinColumn(name = "textoMensagem")
+    @Column(name = "textoMensagem")
     private String texto;
 
     @JoinColumn(name = "idUsuario")

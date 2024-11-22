@@ -10,10 +10,10 @@ import lombok.Setter;
 public class CategoriaItens {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "idItem")
+    @Column(name = "idItem")
     private Long id;
 
-    @JoinColumn(name = "nomeItem")
+    @Column(name = "nomeItem")
     private String nome;
 
     @JoinColumn(name = "idCategoria")

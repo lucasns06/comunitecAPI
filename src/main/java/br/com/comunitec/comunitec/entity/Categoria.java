@@ -11,13 +11,13 @@ import java.awt.*;
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "idCategoria")
+    @Column(name = "idCategoria")
     private Long id;
 
-    @JoinColumn(name = "nomeCategoria")
+    @Column(name = "nomeCategoria")
     private String texto;
 
-    @JoinColumn(name = "imagemCategoria")
+    @Column(name = "imagemCategoria")
     private Image imagem;
 
     @ManyToOne
