@@ -1,6 +1,6 @@
 package br.com.comunitec.comunitec.entity;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +8,14 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CategoriaItens {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "idItem")
     private Long id;
+
+    @JoinColumn(name = "nomeItem")
     private String nome;
-    Categoria categoria;
+
+    @JoinColumn(name = "idCategoria")
+    private Categoria categoria;
 }
