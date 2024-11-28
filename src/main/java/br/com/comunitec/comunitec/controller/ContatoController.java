@@ -18,5 +18,8 @@ public class ContatoController {
     public Contato gravar(Contato contato){
         return service.gravar(contato);
     }
+    public void deletar(Contato contato){
+        service.deletar(contato);
+    }
 
 }

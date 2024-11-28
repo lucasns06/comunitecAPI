@@ -18,4 +18,11 @@ public class CategoriaController {
     public List<Categoria> listar(){
         return service.listar();
     };
+    public Categoria adicionar(Categoria categoria){
+        return service.adicionar(categoria);
+    }
+    public void deletar(Categoria categoria){
+        service.deletar(categoria);
+    }
+
 }

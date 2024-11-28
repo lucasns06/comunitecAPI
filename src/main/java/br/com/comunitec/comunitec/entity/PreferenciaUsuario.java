@@ -13,12 +13,14 @@ public class PreferenciaUsuario {
     @Column(name = "idPreferenciaUsuario")
     private Long id;
 
+    @OneToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
+
     @Column(name = "tema")
     private TemaEnum tema;
 
     @Column(name = "tomVoz")
     private tomVozEnum voz;
 
-    @JoinColumn(name = "idUsuario")
-    private Usuario usuario;
 }
