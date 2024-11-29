@@ -21,5 +21,4 @@ public class ContatoController {
     public void deletar(Contato contato){
         service.deletar(contato);
     }
-
 }

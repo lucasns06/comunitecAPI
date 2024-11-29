@@ -10,12 +10,12 @@ import lombok.Setter;
 public class Mensagem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idMensagem")
+//    @Column(name = "idMensagem")
     private Long id;
 
-    @Column(name = "textoMensagem")
+//    @Column(name = "textoMensagem")
     private String texto;
 
-    @JoinColumn(name = "idUsuario")
+//    @JoinColumn(name = "idUsuario")
     private Contato contato;
 }

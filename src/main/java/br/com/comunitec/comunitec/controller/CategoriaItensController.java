@@ -1,25 +1,32 @@
 package br.com.comunitec.comunitec.controller;
 
+import br.com.comunitec.comunitec.entity.Categoria;
 import br.com.comunitec.comunitec.entity.CategoriaItens;
 import br.com.comunitec.comunitec.service.CategoriaItensService;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/CategoriaItens")
 public class CategoriaItensController {
-    CategoriaItensService service;
+    @Autowired
+    private CategoriaItensService service;
 
+    @GetMapping
     public List<CategoriaItens> listar(){
         return service.listar();
     }
+    @GetMapping("/{id}")
+    public CategoriaItens listarPorId(Long id){
+        return service.listarPorId(id);
+    }
+    @PostMapping
     public CategoriaItens adicionar(CategoriaItens categoriaItens){
         return service.adicionar(categoriaItens);
     }
+    @DeleteMapping
     public void deletar(CategoriaItens categoriaItens){
         service.deletar(categoriaItens);
     }

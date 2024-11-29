@@ -8,6 +8,7 @@ import java.awt.*;
 @Getter
 @Setter
 @Entity
+@Table(name = "Categoria")
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,8 +18,8 @@ public class Categoria {
     @Column(name = "nomeCategoria")
     private String texto;
 
-    @Column(name = "imagemCategoria")
-    private Image imagem;
+//    @Column(name = "imagemCategoria")
+//    private Image imagem;
 
     @ManyToOne
     @JoinColumn(name = "idUsuario")

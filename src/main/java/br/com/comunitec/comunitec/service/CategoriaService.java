@@ -16,16 +16,20 @@ public class CategoriaService {
     @Autowired
     private CategoriaRepository repository;
 
-    @GetMapping
     public List<Categoria> listar(){
         return repository.findAll();
     };
 
-    @PostMapping
+    public Categoria listarPorId(Long id){
+        var existe = repository.findById(id);
+        if(existe.isPresent())
+            return existe.get();
+        return null;
+    }
     public Categoria adicionar(@RequestBody Categoria categoria){
         return repository.save(categoria);
     }
-    @DeleteMapping
+
     public void deletar(Categoria categoria){
         repository.delete(categoria);
     }
