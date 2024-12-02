@@ -26,7 +26,7 @@ public class CategoriaService {
             return existe.get();
         return null;
     }
-    public Categoria adicionar(@RequestBody Categoria categoria){
+    public Categoria adicionar(Categoria categoria){
         return repository.save(categoria);
     }
 

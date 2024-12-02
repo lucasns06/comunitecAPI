@@ -9,7 +9,6 @@ import java.awt.*;
 @Getter
 @Setter
 @Entity
-@Data
 @Table(name = "Categoria")
 public class Categoria {
     @Id
@@ -18,12 +17,13 @@ public class Categoria {
     private Long id;
 
     @Column(name = "nomeCategoria")
-    private String texto;
+    private String nomeCategoria;
 
-//    @Column(name = "imagemCategoria")
-//    private Image imagem;
+    public Categoria(Long id, String nomeCategoria) {
+        this.id = id;
+        this.nomeCategoria = nomeCategoria;
+    }
 
-//    @ManyToOne
-//    @JoinColumn(name = "idUsuario")
-//    private Usuario usuario;
+    public Categoria(){}
+
 }
