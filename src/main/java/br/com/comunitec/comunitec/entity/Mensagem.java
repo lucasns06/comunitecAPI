@@ -17,5 +17,5 @@ public class Mensagem {
     private String texto;
 
 //    @JoinColumn(name = "idUsuario")
-    private Contato contato;
+//    private Contato contato;
 }

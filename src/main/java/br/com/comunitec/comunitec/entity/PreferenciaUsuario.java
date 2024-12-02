@@ -14,9 +14,9 @@ public class PreferenciaUsuario {
     @Column(name = "idPreferenciaUsuario")
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "idUsuario")
-    private Usuario usuario;
+//    @OneToOne
+//    @JoinColumn(name = "idUsuario")
+//    private Usuario usuario;
 
     @Column(name = "tema")
     private TemaEnum tema;

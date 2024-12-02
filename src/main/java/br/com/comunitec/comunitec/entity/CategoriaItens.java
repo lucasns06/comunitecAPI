@@ -26,7 +26,7 @@ public class CategoriaItens {
 //    @Column(name = "imagemItem")
 //    private Image imagem;
 
-    @ManyToOne
-    @JoinColumn(name = "idUsuario")
-    private Usuario usuario;
+//    @ManyToOne
+//    @JoinColumn(name = "idUsuario")
+//    private Usuario usuario;
 }
