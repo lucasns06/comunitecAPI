@@ -4,10 +4,7 @@ import br.com.comunitec.comunitec.entity.Categoria;
 import br.com.comunitec.comunitec.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,9 +23,22 @@ public class CategoriaService {
             return existe.get();
         throw new RuntimeException();
     }
-
+    public Categoria buscarPorNome(String nome){
+        return repository.findByNome(nome);
+    }
     public Categoria adicionar(Categoria categoria){
         return repository.save(categoria);
+    }
+
+    public Categoria editar(Categoria categoria)
+    {
+        var existe = listarPorId(categoria.getId());
+        if (existe != null)
+        {
+            return repository.save(categoria);
+        }else{
+            return null;
+        }
     }
 
     public void deletarPorId(Long id){
@@ -36,5 +46,4 @@ public class CategoriaService {
         if(existe != null)
             repository.deleteById(id);
     }
-
 }
