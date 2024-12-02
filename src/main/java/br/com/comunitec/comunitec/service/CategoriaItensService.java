@@ -17,6 +17,9 @@ public class CategoriaItensService {
     @Autowired
     private CategoriaItensRepository repository;
 
+    public CategoriaItensService(CategoriaItensRepository repository) {
+        this.repository = repository;
+    }
 
     public List<CategoriaItens> listar(){
         return repository.findAll();
@@ -25,7 +28,7 @@ public class CategoriaItensService {
         var existe = repository.findById(id);
         if(existe.isPresent())
             return existe.get();
-        return null;
+        throw new RuntimeException();
     }
     public CategoriaItens adicionar(CategoriaItens categoriaItens){
         return repository.save(categoriaItens);

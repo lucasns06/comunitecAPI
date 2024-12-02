@@ -23,10 +23,11 @@ public class CategoriaItens {
     @Column(name = "nomeItem")
     private String nome;
 
-//    @Column(name = "imagemItem")
-//    private Image imagem;
+    public CategoriaItens(Long id, Categoria categoria, String nome) {
+        this.id = id;
+        this.categoria = categoria;
+        this.nome = nome;
+    }
 
-//    @ManyToOne
-//    @JoinColumn(name = "idUsuario")
-//    private Usuario usuario;
+    public CategoriaItens(){}
 }

@@ -24,14 +24,17 @@ public class CategoriaService {
         var existe = repository.findById(id);
         if(existe.isPresent())
             return existe.get();
-        return null;
+        throw new RuntimeException();
     }
+
     public Categoria adicionar(Categoria categoria){
         return repository.save(categoria);
     }
 
-    public void deletar(Categoria categoria){
-        repository.delete(categoria);
+    public void deletarPorId(Long id){
+        var existe = repository.findById(id);
+        if(existe != null)
+            repository.deleteById(id);
     }
 
 }

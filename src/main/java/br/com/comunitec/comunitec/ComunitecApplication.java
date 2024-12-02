@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class
 
 
-ComunitecApplication {
+ ComunitecApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ComunitecApplication.class, args);

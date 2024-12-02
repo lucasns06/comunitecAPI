@@ -18,16 +18,18 @@ public class CategoriaItensController {
     public List<CategoriaItens> listar(){
         return service.listar();
     }
+
     @GetMapping("/{id}")
-    public CategoriaItens listarPorId(Long id){
+    public CategoriaItens listarPorId(@PathVariable Long id){
         return service.listarPorId(id);
     }
+
     @PostMapping
-    public CategoriaItens adicionar(CategoriaItens categoriaItens){
+    public CategoriaItens adicionar(@RequestBody CategoriaItens categoriaItens){
         return service.adicionar(categoriaItens);
     }
     @DeleteMapping
-    public void deletar(CategoriaItens categoriaItens){
+    public void deletar(@RequestBody CategoriaItens categoriaItens){
         service.deletar(categoriaItens);
     }
 
