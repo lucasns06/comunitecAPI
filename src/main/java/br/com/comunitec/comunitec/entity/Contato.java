@@ -21,7 +21,7 @@ public class Contato {
     @Column(name = "nomeContato")
     private String nome;
 
-    @Column(name = "telefoneContato")
+    @Column(name = "telefoneContato", columnDefinition = "CHAR")
     private String telefone;
 
 }
