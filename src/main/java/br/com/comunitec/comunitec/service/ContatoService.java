@@ -4,10 +4,6 @@ import br.com.comunitec.comunitec.entity.Contato;
 import br.com.comunitec.comunitec.repository.ContatoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -25,5 +21,15 @@ public class ContatoService {
     public void deletar(Contato contato) {
         repository.delete(contato);
     }
-
+    public Contato listarPorId(Long id){
+        var existe = repository.findById(id);
+        if(existe.isPresent())
+            return existe.get();
+        throw new RuntimeException();
+    }
+    public void deletarPorId(Long id){
+        var existe = repository.findById(id);
+        if(existe != null)
+            repository.deleteById(id);
+    }
 }
