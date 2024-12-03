@@ -29,16 +29,16 @@ public class CategoriaController {
     public ResponseEntity<String> listarPorId(@PathVariable Long id) {
         try {
             Categoria categoria = service.listarPorId(id);
-            return ResponseEntity.ok("Categoria encontrada: " + categoria.getNomeCategoria());
+            return ResponseEntity.ok("Categoria encontrada: " + categoria.getNome());
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("404 Not Found \nID não encontrado: " + id);
         }
     }
-//    @GetMapping("/nome/{nome}")
-//    public Categoria buscarPorNome(@PathVariable("nome") String nome)
-//    {
-//        return service.buscarPorNome(nome);
-//    }
+    @GetMapping("/nome/{nome}")
+    public Categoria buscarPorNome(@PathVariable("nome") String nome)
+    {
+        return service.buscarPorNome(nome);
+    }
 
     @PostMapping
     public Categoria adicionar(@RequestBody Categoria categoria){

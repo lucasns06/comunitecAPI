@@ -23,9 +23,9 @@ public class CategoriaService {
             return existe.get();
         throw new RuntimeException();
     }
-//    public Categoria buscarPorNome(String nome){
-//        return repository.findByNome(nome);
-//    }
+    public Categoria buscarPorNome(String nome){
+        return repository.findByNome(nome);
+    }
     public Categoria adicionar(Categoria categoria){
         return repository.save(categoria);
     }

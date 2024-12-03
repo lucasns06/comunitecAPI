@@ -16,11 +16,11 @@ public class Categoria {
     private Long id;
 
     @Column(name = "nomeCategoria")
-    private String nomeCategoria;
+    private String nome;
 
     public Categoria(Long id, String nomeCategoria) {
         this.id = id;
-        this.nomeCategoria = nomeCategoria;
+        this.nome = nomeCategoria;
     }
 
     public Categoria(){}
