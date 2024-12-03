@@ -16,17 +16,13 @@ public class ContatoService {
     @Autowired
     private ContatoRepository repository;
 
-    @GetMapping
     public List<Contato> listar(){
         return repository.findAll();
     }
-
-    @PostMapping
-    public Contato gravar(@RequestBody Contato contato) {
+    public Contato gravar(Contato contato) {
         return repository.save(contato);
     }
-    @DeleteMapping
-    public void deletar(@RequestBody Contato contato) {
+    public void deletar(Contato contato) {
         repository.delete(contato);
     }
 

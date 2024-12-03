@@ -34,11 +34,11 @@ public class CategoriaController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("404 Not Found \nID não encontrado: " + id);
         }
     }
-    @GetMapping("/nome/{nome}")
-    public Categoria buscarPorNome(@PathVariable("nome") String nome)
-    {
-        return service.buscarPorNome(nome);
-    }
+//    @GetMapping("/nome/{nome}")
+//    public Categoria buscarPorNome(@PathVariable("nome") String nome)
+//    {
+//        return service.buscarPorNome(nome);
+//    }
 
     @PostMapping
     public Categoria adicionar(@RequestBody Categoria categoria){

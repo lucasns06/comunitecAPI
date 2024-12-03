@@ -2,8 +2,7 @@ package br.com.comunitec.comunitec.controller;
 
 import br.com.comunitec.comunitec.entity.Contato;
 import br.com.comunitec.comunitec.service.ContatoService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -12,13 +11,18 @@ import java.util.List;
 public class ContatoController {
     private ContatoService service;
 
+    @GetMapping
     public List<Contato> listar(){
         return service.listar();
     }
-    public Contato gravar(Contato contato){
+
+    @PostMapping
+    public Contato gravar(@RequestBody Contato contato){
         return service.gravar(contato);
     }
-    public void deletar(Contato contato){
+
+    @DeleteMapping
+    public void deletar(@RequestBody Contato contato){
         service.deletar(contato);
     }
 }

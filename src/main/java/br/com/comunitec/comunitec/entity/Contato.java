@@ -24,4 +24,11 @@ public class Contato {
     @Column(name = "telefoneContato", columnDefinition = "CHAR")
     private String telefone;
 
+    public Contato(Long id, String nome, String telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.telefone = telefone;
+    }
+
+    public Contato() {}
 }
