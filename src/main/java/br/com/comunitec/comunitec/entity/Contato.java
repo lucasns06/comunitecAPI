@@ -14,10 +14,6 @@ public class Contato {
     @Column(name = "idContato")
     private Long id;
 
-//    @ManyToOne
-//    @JoinColumn(name = "idUsuario")
-//    private Usuario usuario;
-
     @Column(name = "nomeContato")
     private String nome;
 

@@ -2,6 +2,7 @@ package br.com.comunitec.comunitec.controller;
 
 import br.com.comunitec.comunitec.entity.Contato;
 import br.com.comunitec.comunitec.service.ContatoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/Contatos")
 public class ContatoController {
+    @Autowired
     private ContatoService service;
 
     @GetMapping
