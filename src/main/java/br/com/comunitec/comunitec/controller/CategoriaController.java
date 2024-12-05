@@ -1,6 +1,7 @@
 package br.com.comunitec.comunitec.controller;
 
 import br.com.comunitec.comunitec.entity.Categoria;
+import br.com.comunitec.comunitec.entity.CategoriaItens;
 import br.com.comunitec.comunitec.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,13 +27,8 @@ public class CategoriaController {
 //        return service.listarPorId(id);
 //    }
     @GetMapping("/{id}")
-    public ResponseEntity<String> listarPorId(@PathVariable Long id) {
-        try {
-            Categoria categoria = service.listarPorId(id);
-            return ResponseEntity.ok("Categoria encontrada: " + categoria.getNome());
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("404 Not Found \nID não encontrado: " + id);
-        }
+    public Categoria listarPorId(@PathVariable Long id){
+        return service.listarPorId(id);
     }
     @GetMapping("/nome/{nome}")
     public Categoria buscarPorNome(@PathVariable("nome") String nome)

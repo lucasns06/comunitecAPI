@@ -32,4 +32,10 @@ public class ContatoService {
         if(existe != null)
             repository.deleteById(id);
     }
+    public Contato editar(Contato contato){
+        var existe = repository.findById(contato.getId());
+        if(existe.isPresent())
+            return repository.save(contato);
+        return null;
+    }
 }

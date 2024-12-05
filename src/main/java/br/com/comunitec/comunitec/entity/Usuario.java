@@ -17,4 +17,6 @@ public class Usuario {
     @Column(name = "nomeUsuario")
     private String nome;
 
+    @Column(name = "generoUsuario")
+    private String genero;
 }

@@ -18,7 +18,10 @@ public class ContatoController {
     public List<Contato> listar(){
         return service.listar();
     }
-
+    @GetMapping("/{id}")
+    public Contato listarPorId(@PathVariable Long id){
+        return service.listarPorId(id);
+    }
     @PostMapping
     public Contato gravar(@RequestBody Contato contato){
         return service.gravar(contato);
@@ -34,5 +37,12 @@ public class ContatoController {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @PutMapping
+    public Contato editar(@RequestBody Contato contato, @PathVariable Long id) {
+        if(id == contato.getId()){
+            return service.editar(contato);
+        }else{
+            return null;
+        }
+    }
 }

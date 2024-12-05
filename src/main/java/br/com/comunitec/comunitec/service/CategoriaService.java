@@ -30,8 +30,7 @@ public class CategoriaService {
         return repository.save(categoria);
     }
 
-    public Categoria editar(Categoria categoria)
-    {
+    public Categoria editar(Categoria categoria){
         var existe = listarPorId(categoria.getId());
         if (existe != null)
         {
