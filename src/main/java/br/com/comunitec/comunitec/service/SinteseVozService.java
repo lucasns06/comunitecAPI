@@ -15,5 +15,16 @@ public class SinteseVozService {
     public List<SinteseVoz> listar() {
         return repository.findAll();
     }
+    public void deletarPorId(Long id){
+        var existe = repository.findById(id);
+        if(existe != null)
+            repository.deleteById(id);
+    }
 
+    public SinteseVoz listarPorId(Long id) {
+        var existe = repository.findById(id);
+        if(existe.isPresent())
+            return existe.get();
+        throw new RuntimeException();
+    }
 }

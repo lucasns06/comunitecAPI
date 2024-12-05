@@ -3,9 +3,8 @@ package br.com.comunitec.comunitec.controller;
 import br.com.comunitec.comunitec.entity.SinteseVoz;
 import br.com.comunitec.comunitec.service.SinteseVozService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +17,15 @@ public class SinteseVozController {
     @GetMapping
     public List<SinteseVoz> listar(){
         return service.listar();
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<SinteseVoz> deletar(@PathVariable Long id){
+        if(service.listarPorId(id) != null) {
+            service.deletarPorId(id);
+            return ResponseEntity.ok().build();
+        }
+        else{
+            return ResponseEntity.notFound().build();
+        }
     }
 }
